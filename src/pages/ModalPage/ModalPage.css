@@ -45,12 +45,13 @@ input[type=radio] {
 .custom-modal button.ant-btn {
   width: 100px;
   margin: 10px 3px;
+  border: 1px solid #000000;
 }
 
 .modal-btn {
   display: flex;
   justify-content: flex-end;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid #000000;
   margin: 15px -24px 0;
   padding: 15px 24px 0;
 }
