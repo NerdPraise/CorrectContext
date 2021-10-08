@@ -19,7 +19,7 @@ export interface ClearStatusCodeAction {
 export type Actions = ExportReportAction | ClearStatusCodeAction
 
 export const exportReport = (values: any) => (dispatch: Dispatch) => {
-  API.post("post/", values)
+  API.post("report/", values)
     .then((response) => {
       dispatch({
         type: ActionTypes.EXPORT_REPORT,

@@ -1,6 +1,6 @@
 import Axios from "axios"
 
-const baseURL = "https://postman-echo.com/"
+const baseURL = "https://salty-springs-62643.herokuapp.com/api/"
 
 const AuthenticatedAPI = Axios.create({
   baseURL,
