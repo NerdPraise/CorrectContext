@@ -19,7 +19,6 @@ export interface ClearStatusCodeAction {
 export type Actions = ExportReportAction | ClearStatusCodeAction
 
 export const exportReport = (values: any) => (dispatch: Dispatch) => {
-  console.log("sjjsd")
   API.post("post/", values)
     .then((response) => {
       dispatch({

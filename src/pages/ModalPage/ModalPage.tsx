@@ -42,7 +42,6 @@ export const ModalPageContent: FC<ModalPageProps> = ({
   const handleSubmit = (values: any) => {
     clearStatusCode()
     const data = { ...values, ...schedule }
-    console.log(data)
     exportData(data)
   }
 
