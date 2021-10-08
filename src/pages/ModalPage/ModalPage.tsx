@@ -54,7 +54,7 @@ export const ModalPageContent: FC<ModalPageProps> = ({
   }
 
   return (
-    <div className="modal-page-wrapper">
+    <div className="modal-page-wrapper" data-testid="modal-page-wrapper">
       <Button onClick={() => setIsVisible(true)}> Click me</Button>
       <Modal
         centered
