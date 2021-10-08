@@ -27,6 +27,7 @@ export const ModalPageContent: FC<ModalPageProps> = ({
   exportData,
 }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false)
   const [schedule, setSchedule] = useState<ScheduleDetails>({})
 
   useEffect(() => {
@@ -36,11 +37,13 @@ export const ModalPageContent: FC<ModalPageProps> = ({
     } else if (statusCode >= StatusCode.BAD_REQUEST) {
       message.error("Form Submission failed")
     }
+    setLoading(false)
     clearStatusCode()
   }, [statusCode, clearStatusCode])
 
   const handleSubmit = (values: any) => {
     clearStatusCode()
+    setLoading(true)
     const data = { ...values, ...schedule }
     exportData(data)
   }
@@ -195,7 +198,7 @@ export const ModalPageContent: FC<ModalPageProps> = ({
 
               <div className="modal-btn">
                 <Button onClick={() => handleCancel(resetForm)}>Cancel</Button>
-                <Button htmlType="submit" className="submit">
+                <Button loading={loading} htmlType="submit" className="submit">
                   OK
                 </Button>
               </div>
